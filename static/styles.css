@@ -14,7 +14,9 @@ header{
     align-items: center;
     background-color: #333;
     color:white;
-    padding:3vh;
+    padding: 3vh;
+    padding-top:-1vh;
+    padding-bottom:-1vh;
 }
 
 nav a{
@@ -58,24 +60,49 @@ nav ul li {
     margin-bottom:5vh;
 }
 
-.mainimage button {
+.mainimage #start {
+    width:25vh;
     color:white;
     background-color: #385779;
     padding:3vh;
-    border:1px solid white;
-    font-size:4vh;
+    border:2px solid #043c79;
+    font-size:2.5vh;
     border-radius: 2vh;
     box-shadow: 0px 10px 20px 0px #3333332f;
-    transition:0.1s
+    transition:0.1s;
+    cursor:pointer;
 }
 
-.mainimage button:hover {
+.mainimage #start:hover {
     color:white;
     background-color: #4e81b8;
     transition:0.1s;
 }
 
-.mainimage button:active{
+.mainimage #start:active{
+    transform:scale(0.95);
+    transition:0.1s;
+}
+
+.mainimage #readmore {
+    width:25vh;
+    color:white;
+    background-color: transparent;
+    padding:3vh;
+    border:2px solid white;
+    font-size:2.5vh;
+    border-radius: 2vh;
+    box-shadow: 0px 10px 20px 0px #3333332f;
+    transition:0.1s;
+    cursor:pointer;
+}
+
+.mainimage #readmore:hover {
+    background-color: #ffffff31;
+    transition:0.1s;
+}
+
+.mainimage #readmore:active {
     transform:scale(0.95);
     transition:0.1s;
 }
@@ -88,19 +115,83 @@ nav ul li {
     margin-right:30vh;
     align-items: center;
     border-radius:4vh;
-    box-shadow:0px 0px 50px -10px rgba(0, 0, 0, 0.13);
-    border:1vh #003cff solid;
-    outline:1vh solid #fff;
 }
 
 .functionnalities h2{
     margin:5vh;
-    font-size:6vh;
-    text-align: center;
+    font-size:5vh;
     font-weight:800;
+}
+
+.functionnalities p {
+    margin:5vh;
+    font-size:large;
 }
 
 .functionnalities img {
     height:60vh;
     border-radius: 4vh;
+}
+
+.functionnalities button{
+    background-color: #333;
+    color:white;
+    border-radius: 1vh;
+    border:none;
+    padding:2vh;
+    margin-left:5vh;
+    text-align: center;
+    font-size: 2vh;
+    width:24vh;
+    min-height:4vh;
+    transition:0.1s;
+}
+
+.functionnalities button:hover{
+    background-color: #4d4d4d;
+}
+
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    overflow: auto; /* Enable scroll if needed */
+    transition: opacity 0.3s ease; /* Smooth opacity transition */
+    opacity: 0; /* Initially hidden */
+}
+
+/* Modal content box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Smooth scale transition */
+    transform: scale(0.5); /* Initially scaled down */
+}
+
+/* Close button styling */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
