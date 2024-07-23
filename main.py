@@ -13,5 +13,3 @@ def sign_up():
     return render_template("signup.html",css="static/styles.css")
 
 app.run(debug=True)
-
-# reload : aa

@@ -12,24 +12,42 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: transparent;
     color:white;
-    padding: 3vh;
-    padding-top:-1vh;
+    margin-top:-3vh;
     padding-bottom:-1vh;
 }
 
 nav a{
+    font-size: medium;
+    display:inline-block;
+    position:relative;
     text-decoration: none;
     color:white;
-    padding-top:2vh;
-    padding-bottom: 2vh;
 }
 
-nav a:hover{
-    color:#333;
+nav a::after{
+    content: '';
+    position: absolute;
+    translate: 50% 0;
+    width: 50%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom:0;
+    left: 0;
     background-color: white;
-    transition: 0.2s;
+    transition: transform 0.2s ease-out;
+}
+
+nav a:hover::after{
+    transform:scaleX(1);
+    transition:0.2s;
+}
+
+#activepage {
+    border-radius: 2vh;
+    background-color: white;
+    color: #000cb8
 }
 
 nav ul{
@@ -47,17 +65,37 @@ nav ul li {
     color:white;
     padding:3vh;
     text-align: center;
-    background-image:radial-gradient(ellipse at bottom, rgb(0, 162, 255),#003cff);
+    background-image:radial-gradient(ellipse at bottom, #00e1ff,#000cb8);
+}
+
+@keyframes hoverDown {
+    from {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+    to {
+        top:0%;
+        opacity: 100%;
+    }
 }
 
 .mainimage h1 {
     font-size: 8vh;
+    animation: hoverDown 1s;
+    animation-timing-function:ease-in-out;
 }
 
 .mainimage h2{
     font-weight: 300;
     margin-top:-4vh;
     margin-bottom:5vh;
+    animation: hoverDown 1s;
+    animation-timing-function:ease-in-out;
+}
+
+.mainimage button {
+    animation: hoverDown 1s;
+    animation-timing-function:ease-in-out;
 }
 
 .mainimage #start {
@@ -68,7 +106,6 @@ nav ul li {
     border:2px solid #043c79;
     font-size:2.5vh;
     border-radius: 2vh;
-    box-shadow: 0px 10px 20px 0px #3333332f;
     transition:0.1s;
     cursor:pointer;
 }
@@ -92,7 +129,6 @@ nav ul li {
     border:2px solid white;
     font-size:2.5vh;
     border-radius: 2vh;
-    box-shadow: 0px 10px 20px 0px #3333332f;
     transition:0.1s;
     cursor:pointer;
 }
@@ -118,9 +154,31 @@ nav ul li {
 }
 
 .functionnalities h2{
+    position: relative;
+    display:inline-block;
     margin:5vh;
+    margin-bottom:-2vh;
     font-size:5vh;
     font-weight:800;
+}
+
+.functionnalities h2::after{
+    content: '';
+    position: absolute;
+    width: 50%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom:-1vh;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+}
+
+.functionnalities h2:hover::after{
+    transform-origin: bottom left;
+    transform:scaleX(1);
+    transition:0.25s;
 }
 
 .functionnalities p {
@@ -164,6 +222,7 @@ nav ul li {
     overflow: auto; /* Enable scroll if needed */
     transition: opacity 0.3s ease; /* Smooth opacity transition */
     opacity: 0; /* Initially hidden */
+    text-align: center;
 }
 
 /* Modal content box */
@@ -172,12 +231,22 @@ nav ul li {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    max-width: 500px;
+    width: 60%; /* Could be more or less, depending on screen size */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease; /* Smooth scale transition */
     transform: scale(0.5); /* Initially scaled down */
+}
+
+.modal button {
+    display:block;
+    margin:auto;
+    margin-bottom: 3vh;
+    width:30%;
+    border:none;
+    padding:2vh;
+    border-radius: 1vh;
+    font-size:x-large;
 }
 
 /* Close button styling */
@@ -194,4 +263,51 @@ nav ul li {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+.signupbody{
+    overflow:hidden;
+    background-image: url("../static/assets/signupbg.jpeg");
+}
+
+.signupheader{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:50%;
+    height:10vh;
+    color:white;
+    background-color: #043c79;
+}
+
+.loginform{
+    background-color: white;
+    height:90vh;
+    width:50%;
+    margin:0;
+    justify-content: center;
+    display: flex;
+}
+
+.loginform h3{
+    display:block;
+    margin:1vh;
+}
+
+.loginform input{
+    width: 84.5%;
+    text-align:center;
+    display:block;
+    font-size:large;
+    padding:1vh;
+    border-radius:1vh;
+    border:1px solid rgb(201, 201, 201);
+}
+
+.loginform button {
+    width: 84.5%;
+    text-align:center;
+    display:block;
+    font-size:large;
+    padding:1vh;
 }
