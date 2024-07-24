@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="mainlogin">
+        <form method="post">
+            <h2>Login to QuizMate</h2>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign up</a></p>
+            <button type="submit">Login</button>
+            <a href="{{ url_for('index')}}" id="return"><b>⬅ Return Home</b></a>
+        </form>
+    </div>
+</body>
+</html>
