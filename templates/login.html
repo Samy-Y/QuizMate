@@ -4,11 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    *{
+        font-family: 'Inter',sans-serif;
+    }
+
+    body{
+        margin:0;
+        background: radial-gradient(ellipse at bottom right, #00e1ff, #043c79);
+        background-size: 400% 400%;
+        animation: bgsignup 22s ease infinite;
+    }
+
+    @keyframes bgsignup {
+        0%{background-position:57% 0%}
+        50%{background-position:44% 100%}
+        100%{background-position:57% 0%}
+    }
+
+    .mainlogin{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .mainlogin h1{
+        color:white;
+        font-size: 9vh;
+        display:block;
+        margin:0 auto;
+        position: relative; /* Ensure the pseudo-element is positioned relative to the h1 */
+    }
+
+    .mainlogin h1::after {
+        content: '';
+        position: absolute; /* Position the pseudo-element absolutely */
+        width: 80%;
+        height: 2px;
+        bottom: 0;
+        left: 10%; /* Center the underline */
+        background-color: white;
+        transform: scaleX(0);
+        transition: transform 0.1s ease-out;
+    }
+
+    .mainlogin h1:hover::after {
+        transform: scaleX(1);
+        transition: transform 0.1s;
+    }
+
+
+    form {
+        display: flex;
+        gap:1vh;
+        flex-direction: column; /* Stack elements vertically */
+        width: 30%;
+        height: 100vh;
+        background-color: white;
+        margin-left: 10vh;
+        box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.085);
+    }
+
+    form h2{
+        font-size:4vh;
+        margin-left:5vh;
+        margin-right: 5vh;
+        text-align: center;
+        margin-top:2vh;
+        color:#043c79;
+    }
+
+    form h4{
+        margin-top:10vh;
+        text-align: center;
+        color: #888888;
+    }
+
+    form input {
+        padding:1vh;
+        padding-top:1.5vh;
+        padding-bottom: 1.5vh;
+        font-size:medium;
+        border:1px solid #ccc;
+        background-color: white;
+        margin-left:5vh;
+        margin-right:5vh;
+        margin-bottom:3vh;
+        transition:0.1s
+    }
+
+    form input:hover{
+        background-color: #f4f4f4;
+        transition: 0.1s;
+    }
+
+    form p {
+        margin-left:5vh;
+        margin-right:5vh;
+        margin-top:0;
+        margin-bottom:0;
+        font-size: small;
+    }
+
+    form button {
+        display:block;
+        width:85%;
+        font-size:large;
+        padding:2vh;
+        margin:0 auto;
+        margin-top: 2vh;
+
+        border:none;
+        background-color: #043c79;
+        color:white;
+        font-weight: 600;
+        transition: 0.1s;
+
+    }
+
+    form button:hover {
+        background-color: #0754a6;
+        transition:0.1s;
+    }
+
+    #return {
+        margin-top:3vh;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left:5vh;
+        font-size:3vh;
+        color:#043c79;
+        transition: 0.1s;
+    }
+
+    #return:hover{
+        color:#0754a6;
+        transition: 0.1s;
+    }
+    </style>
 </head>
 <body>
     <div class="mainlogin">
         <form method="post">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <h2>Login to QuizMate</h2>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
@@ -16,6 +163,7 @@
             <button type="submit">Login</button>
             <a href="{{ url_for('index')}}" id="return"><b>⬅ Return Home</b></a>
         </form>
+        <h1>Welcome back to QuizMate.</h1>
     </div>
 </body>
 </html>

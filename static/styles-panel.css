@@ -1,0 +1,78 @@
+/* PANEL */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    font-family: 'Inter',sans-serif;
+}
+
+body {
+    margin:0;
+}
+
+header {
+    color:white;
+    text-align:center;
+    display:grid;
+    align-items: center;
+    background-image:radial-gradient(ellipse at bottom, #0077ff,#000283);
+    height:30vh;
+}
+
+header h1{
+    font-size:7vh;
+    margin-bottom:0;
+}
+
+header h2{
+    font-size:3vh;
+    font-weight: 400;
+}
+
+.panel-buttons {
+    display:flex;
+}
+
+.category {
+    width:50%;
+    margin-top:1vh;
+    display:grid;
+    gap:2vh;
+}
+
+.category h1 {
+    text-align: center;
+}
+
+.category button {
+    display:block;
+    margin:0 auto;
+    width:40vh;
+    padding:3vh;
+    font-size:larger;
+}
+
+.create-btn {
+    background-color: #333;
+    border:none;
+    color:white;
+    border-radius: 1vh;
+}
+
+.create-btn:hover {
+    background-color: #4d4d4d;
+}
+
+.temp-btn {
+    border:none;
+    background-color: transparent;
+    box-shadow:0px 0px 0px 2px #333 ;
+    padding:2vh;
+    font-size:medium;
+    color:#333;
+    border-radius: 1vh;
+}
+
+.temp-btn:hover {
+    background-color: #eee;
+}
