@@ -12,7 +12,7 @@
             <nav>
                 <h1>Panel</h1>
                 <hr>
-                <a href=""><div>
+                <a href="{{url_for('panel')}}"><div>
                     <img src="../static/assets/nav/dashboard-icon.png">
                     <button style="color:#000283">Dashboard</button>
                 </div></a>
@@ -24,7 +24,7 @@
                     <img src="../static/assets/nav/manage-icon.svg">
                     <button>Manage your quizzes</button>
                 </div></a>
-                <a href="{{url_for('account')}}"><div>
+                <a href=""><div>
                     <img src="../static/assets/nav/account-icon.png">
                     <button>Account</button>
                 </div></a>
@@ -34,10 +34,23 @@
                 </div></a>
             </nav>
         </div>
-        <header>
-            <h1>Welcome back, {{username}}</h1>
-            <h2>The panel allows you to create and edit your quizzes.</h2>
-        </header>
+        <div class="formaccount">
+            <h1>Account informations</h1>
+            <form action="" method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" value="{{username}}">
+                <label for="email">E-Mail</label>
+                <input type="text" id="email" name="email" value="{{email}}">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" value="{{password}}">
+                <button type="submit" id="submitbtn">Update Informations</button>
+            </form>
+            <div style="margin-top:2vh">
+                <input type="checkbox" onclick="showPassPanel()" id="showPass">Show Password
+            </div>
+            
+        </div>
     </div>
+    <script src="../static/script.js"></script>
 </body>
 </html>

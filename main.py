@@ -72,6 +72,8 @@ def login():
             login_user(user_obj)
             session['user_id'] = user[0]
             session['username'] = username
+            session['email'] = user[2]
+            session['password'] = user[3]
             return redirect(url_for("panel"))
         else:
             flash('Invalid username or password', 'danger')
@@ -91,5 +93,23 @@ def logout():
 def panel():
     return render_template("panel.html",css="styles.css",username=session.get('username'))
 
+@app.route("/account",methods=["GET","POST"])
+@login_required
+def account():
+    if request.method == "GET":
+        return render_template("account.html",css="styles.css",
+                               username=session.get('username'),
+                               email=session.get('email'),
+                               password=session.get('password'))
+    else:
+        new_username = request.form.get('username')
+        new_email = request.form.get('email')
+        new_password = request.form.get('password')
+        user_id = session.get('user_id')
+
+        conn = sqlite3.connect("users.db")
+        cursor = conn.cursor()
+        cursor.execute("UPDATE username = ?, email = ?, password = ? WHERE id = ?;",(new_username,new_email,new_password))
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0",debug=True)

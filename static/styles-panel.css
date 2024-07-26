@@ -8,6 +8,11 @@
 
 body {
     margin:0;
+    background-color: #eee;
+}
+
+.maincontainer {
+    display:flex;
 }
 
 header {
@@ -17,6 +22,9 @@ header {
     align-items: center;
     background-image:radial-gradient(ellipse at bottom, #0077ff,#000283);
     height:30vh;
+    width:100%;
+    border-radius: 7vh;
+    margin:4vh;
 }
 
 header h1{
@@ -29,50 +37,94 @@ header h2{
     font-weight: 400;
 }
 
-.panel-buttons {
-    display:flex;
+.navcontainer {
+    width:30%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: white;
 }
 
-.category {
-    width:50%;
-    margin-top:1vh;
+nav {
+    width:100%;
     display:grid;
     gap:2vh;
 }
 
-.category h1 {
-    text-align: center;
+nav hr{
+    width:90%;
 }
 
-.category button {
-    display:block;
-    margin:0 auto;
-    width:40vh;
-    padding:3vh;
-    font-size:larger;
+nav h1{
+    margin-bottom:0;
+    margin-left:4vh;
+    font-size:xx-large;
 }
 
-.create-btn {
-    background-color: #333;
-    border:none;
-    color:white;
-    border-radius: 1vh;
+nav a {
+    text-decoration: none;
 }
 
-.create-btn:hover {
-    background-color: #4d4d4d;
+nav a div {
+    margin-left:4vh;
+    display:flex;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
-.temp-btn {
-    border:none;
-    background-color: transparent;
-    box-shadow:0px 0px 0px 2px #333 ;
+nav a div img {
+    height:3vh;
+    object-fit: cover;
+}
+
+nav a div button {
+    border-radius: 0px 2vh 2vh 0px;
     padding:2vh;
-    font-size:medium;
-    color:#333;
-    border-radius: 1vh;
+    text-align: left;
+    border:none;
+    background-color: white;
+    font-size: 3vh;
+    transition:0.1s ease-in-out;
+    cursor: pointer;
 }
 
-.temp-btn:hover {
-    background-color: #eee;
+nav a div button:hover{
+    transition:0.1s ease-in-out;
+    color:#888
+}
+
+.formaccount {
+    width: 100%;
+    margin-left:2vh;
+}
+
+form {
+    display:grid;
+    gap:1vh;
+}
+
+form label {
+    font-size:large;
+}
+
+form input {
+    width:50vh;
+    border:none;
+    padding:1vh;
+    font-size:medium;
+}
+
+#submitbtn {
+    border:none;
+    padding:2vh;
+    color:white;
+    background-color: #888;
+    border-radius:1vh;
+    margin-top:2vh;
+    font-size:3vh;
+    transition:0.1s ease-in-out;
+}
+
+#submitbtn:hover{
+    transition:0.1s ease-in-out;
+    background-color: #aaa;
 }
